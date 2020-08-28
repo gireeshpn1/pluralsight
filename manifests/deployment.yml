@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: build1 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: build1 
+    spec:
+      containers:
+        - name: build1 
+          image: gpregistry1.azurecr.io/build1
+          ports:
+          - containerPort: 8080
